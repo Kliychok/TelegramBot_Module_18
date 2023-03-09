@@ -27,7 +27,7 @@ def get_price(message: telebot.types.Message):
 
         quote, base, amount = values
         # total_base = CryptoConverter.get_price(quote, base, amount) * float(amount)
-        total_base = CryptoConverter.get_price(quote, base, amount)
+        total_base = CryptoConverter.get_price(quote, base, amount) * float(amount)
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя\n{e}')
     except Exception as e:
